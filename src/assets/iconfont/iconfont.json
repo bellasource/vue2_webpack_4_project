@@ -1,0 +1,16 @@
+{
+  "id": "2766361",
+  "name": "例子",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3108159",
+      "name": "测试用例子集",
+      "font_class": "test-case-secondary",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    }
+  ]
+}
