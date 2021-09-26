@@ -20,7 +20,6 @@
   - 配置runtime
   - 开启热模替换
 
-
 - 配置devserve，包括服务代理，mock拦截，服务端口，地址等
 
 - 配置resolve中路径别名

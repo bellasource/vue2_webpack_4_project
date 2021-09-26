@@ -20,13 +20,13 @@ module.exports = () =>
             devtool: 'eval-source-map',
             devServer: {
               hot: true,
-              contentBase: path.root,//告诉服务器从哪个目录中提供内容,默认将使用当前工作目录作为提供内容的目录
               port: port,
               host: '0.0.0.0',
-              publicPath: '/',
-              historyApiFallback: true,//任意的 404 响应都可能需要被替代为 index.html,history模式下
-              quiet: true,//启动后不打印错误和警告
-              before(app) {
+              historyApiFallback: true, //任意的 404 响应都可能需要被替代为 index.html,history模式下
+              client: {
+                progress: true,
+              },
+              onBeforeSetupMiddleware({ app }) {
                 //配置mock
                 apiMocker(app, path.mock, {
                   changeHost: true,
