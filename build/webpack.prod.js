@@ -3,7 +3,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const InlineManifestWebpackPlugin = require('./inline-manifest-webpack-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
@@ -30,6 +29,7 @@ module.exports = merge(common, {
   output: {
     filename: 'assets/[name].[chunkhash].js',
     chunkFilename: 'assets/[name].[chunkhash].chunk.js',
+    clean: true,
   },
   module: {
     rules: [
@@ -140,6 +140,6 @@ module.exports = merge(common, {
     // 抽离runtime代码至html中
     new InlineManifestWebpackPlugin(),
     // 清空打包目录
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
   ],
 });

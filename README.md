@@ -1,25 +1,22 @@
 # 说明
 
-使用 webpack4 搭建 vue + vue-router + vuex + axios 项目
+webpack4升级到webpack5
 
-主要分为以下部分：
+1.版本升级 webpack html-webpack-plugin webpack-dev-server webpack-cli
 
-- 配置输入、输出路径，打包模式
+安装： npm i webpack@5 html-webpack-plugin@5 webpack-dev-server@4 webpack-cli@4
 
-- 配置识别解析css、less、scss、vue、字体文件、图片资源的loader
-  - 配置引入less、scss全局变量的loader
-  - 压缩css样式文件，提取css为但唯独文件
-  - 多线程打包js，vue文件
+2.清空打包目录插件clean-webpack-plugin
 
-- 配置生成html模板的plugin
+不需要此插件，只需要在output中配置 clean:true
 
-- 拷贝静态资源
+3.devServer模块变更
 
-- 打包优化
-  - splitchunks拆包
-  - 配置runtime
-  - 开启热模替换
-
-- 配置devserve，包括服务代理，mock拦截，服务端口，地址等
-
-- 配置resolve中路径别名
+```js
+onBeforeSetupMiddleware({ app }) {
+  //配置mock
+  apiMocker(app, path.mock, {
+    changeHost: true,
+  });
+},
+```
