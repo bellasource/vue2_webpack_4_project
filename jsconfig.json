@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-        "@/*": ["src/*"]//路径别名提示
+        "@src/*": ["src/*"]//路径别名提示
     }
   },
   "exclude": ["node_modules", "dist"] // 除了这两个目录以外,其他的目录都使用上述的设置

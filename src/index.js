@@ -8,15 +8,10 @@ import 'normalize.css'; //格式化样式
 import './assets/styles/global.less';
 import './assets/iconfont/iconfont.css';
 import API from './api';
-import a from '@src/'
 
 Vue.config.productionTip = false;
 Vue.prototype.$API = API;
 
-const hello = {
-  name:"xiaoming"
-}
-hello.age=20
 new Vue({
   router,
   store,
